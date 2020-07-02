@@ -1,4 +1,4 @@
-let imageResult = document.querySelector('main')
+// HTML Basic Body Tages
 
 let coin = {
     state: 0,
@@ -11,20 +11,21 @@ let coin = {
         return(this.state)
     },
     toString: function() {
+        let listItem = document.createElement('li')
+        orderedList.append(listItem)
         /* 2. Return the string "Heads" or "Tails", depending on whether
            "this.state" is 0 or 1. */
         if (this.state === 0){
-            this.toString = 'Heads'
-            //console.log(this.toString)
+            listItem.append('Heads')
             //return(this.toString)
         } else {
-            this.toString = 'Tails'
-            //console.log(this.toString)
+            listItem.append('Tails')
             //return(this.toString)
         }
     },
     toHTML: function() {
         let image = document.createElement('img');
+        image.className = 'penny'
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
            // tails image from Penny war - Wikipedia
@@ -37,25 +38,35 @@ let coin = {
                 image.setAttribute('alt', 'Tails')
            }
         //console.log(image)
-        imageResult.append(image)
+        imageDiv.append(image)
         return image;
     }
 };
 
 function display20Images() {
-    //for (let i = 0; i <  20; i += 1) {
-        coin.flip()
-        coin.toString(this.state)
-        coin.toHTML(this.state)
-    //}
+    coin.flip()
+    coin.toHTML(this.state)
 }
 
-function run20() {
+function display20Strings() {
+    coin.flip()
+    coin.toString(this.state)
+}
+
+stringButton.addEventListener('click', function () {
+    orderedList.innerHTML = ""
+    imageDiv.innerHTML = ""
+    for (let i = 0; i <  20; i += 1) {
+        display20Strings()
+        //console.log(coin)
+    }
+})
+
+imageButton.addEventListener('click', function () {
+    imageDiv.innerHTML = ""
+    orderedList.innerHTML = ""
     for (let i = 0; i <  20; i += 1) {
         display20Images()
-        console.log(coin)
+        //console.log(coin)
     }
-}
- run20()
-
-
+})

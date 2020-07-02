@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --fontPoppin: 'Poppins', sans-serif;
+    --fontRoboto: 'Roboto', sans-serif;
+    --headerColor: rgba(10, 10, 110, 0.753);
+    --backgroundColor: rgba(41, 11, 179, 0.52);
+    --fontColor: rgb(160, 160, 226);
+}
+
+body {
+    color: var(--fontColor);
+    font-family: var(--fontPoppin);
+}
+
+h1, h2, h3, h4 {
+    color: var(--headerColor);
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--fontColor);
+    border-radius: 20px;
+    color: white;
+}
+
+.stringB {
+    margin: 0 20px 0 0;
+}
+
+.penny {
+    width: 80px;
+    margin: 0 5px 0 0;
+}
